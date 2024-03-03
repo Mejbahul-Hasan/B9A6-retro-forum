@@ -74,7 +74,7 @@ const loadLatestPosts = async() =>{
     dataLatest.forEach(latest =>{
         const finalDiv = document.createElement('div');
         finalDiv.innerHTML = `
-        <div class="card w-96 bg-purple-100 shadow-xl">
+        <div class="card w-98 bg-purple-100 shadow-xl">
             <figure class="px-10 pt-10">
               <img src="${latest.cover_image}" alt="Shoes" class="rounded-xl" />
             </figure>
@@ -86,7 +86,7 @@ const loadLatestPosts = async() =>{
             </div>
             <div class="card-body -mt-8">
               <h2 class="card-title">${latest.title}</h2>
-              <p>${latest.description}</p>
+              <p class="mr-10">${latest.description}</p>
               <div class="flex">
                 <div class="avatar">
                     <div class="w-24 rounded-full">
