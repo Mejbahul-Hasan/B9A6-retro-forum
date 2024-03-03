@@ -4,12 +4,13 @@ const loadPosts = async() =>{
     const cardContainer = document.getElementById('card-container');
 
     data.posts.forEach(item=>{
+        
         const postDiv = document.createElement('div');
         postDiv.innerHTML = `
         <div class="card card-side bg-purple-100 shadow-xl my-5">
                     <figure>
                     <div class="indicator mt-10">
-                    <span class="indicator-item badge badge-secondary mr-3 bg-red-500"></span> 
+                    <span class="indicator-item badge badge-secondary mr-3 ${item.isActive? 'bg-green-500' : 'bg-red-500'}"></span> 
                     <div class=""><img class="max-h-20 rounded-3xl ml-5 mb-14" src="${item.image}" alt="Movie"/></div>
                     </div>
                     </figure>
@@ -32,7 +33,7 @@ const loadPosts = async() =>{
                                 <div class="mx-5">${item.posted_time} <span>min</span></div>
                             </div>
                             <div class="card-actions ml-56">
-                                <button class="rounded-full"><img src="./images/icons8-post-48.png" alt=""></button>
+                                <button onclick="newCard('${item.title}', '${item.view_count}' )" class="rounded-full"><img src="./images/icons8-post-48.png" alt=""></button>
                             </div>
                         </div>
                     </div>
@@ -42,5 +43,41 @@ const loadPosts = async() =>{
     })
 }
 
+
+let count = 1;
+
+const newCard = (find1, find2)=>{
+    
+    document.getElementById('click-count').innerText = count;
+    count++;
+
+    const newCard = document.getElementById('small-card');
+    const smallCard = document.createElement('div');
+    smallCard.innerHTML = `
+    <div class="flex bg-purple-100 rounded-box p-10">
+                        <div>${find1}</div>
+                        <div class="flex px-10">
+                            <div class="mx-5"><img src="./images/icons8-view-24.png" alt=""></div>
+                            <div>${find2}</div>
+                        </div>
+                    </div>
+    `;
+    newCard.appendChild(smallCard);
+}
+
+
+
+
+// const handleSearch = ()=>{
+// }
+
+
  
 loadPosts();
+
+// if(item.isActive === "true"){
+//     document.getElementById('indicator-color').classList.add('bg-green-500');
+// }
+// else{
+//     document.getElementById('indicator-color').classList.add('bg-red-500');
+// }
