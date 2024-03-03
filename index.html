@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReTro Forum</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <header class="mx-20 my-10">
+<!-- navbar section -->
+        <section>
+            <div class="navbar bg-base-100">
+                <div class="flex-1">
+                  <a class="btn btn-ghost text-5xl">ReTro</a>
+                </div>
+                <div class="flex-none gap-x-6">
+                    <div class="tooltip" data-tip="Home">
+                        <button class="btn"><img src="./images/icons8-home-50.png" alt=""></button>
+                    </div>
+                    <div class="tooltip" data-tip="Edit">
+                        <button class="btn"><img src="./images/icons8-edit-50.png" alt=""></button>
+                    </div>
+                    <div class="tooltip" data-tip="Add">
+                        <button class="btn"><img src="./images/icons8-add-50.png" alt=""></button>
+                    </div>
+                    <div class="tooltip" data-tip="Flag">
+                        <button class="btn"><img src="./images/icons8-flag-50.png" alt=""></button>
+                    </div>
+                    <button class="btn btn-primary rounded-full">Sign In</button>
+                </div>
+              </div>
+        </section>
+<!-- Banner section -->
+        <section>
+            <div class="hero bg-slate-800 rounded-3xl" style="background-image: url(./images/bgbanner.png);">
+                <div class="hero-content flex-col lg:flex-row-reverse lg:m-20">
+                    <div class="bg-white text-2xl p-16 flex rounded-3xl max-w-sm ml-32">
+                        <div>
+                            <p class=" text-gray-700">Registered Users</p>
+                            <p class=" text-gray-700">Forum</p>
+                            <p class=" text-gray-700">Topics</p>
+                            <p class=" text-gray-700">Replies</p>
+                        </div>
+                        <div class="pl-10">
+                            <p class=" text-gray-700">01</p>
+                            <p class=" text-gray-700">05</p>
+                            <p class=" text-gray-700">01</p>
+                            <p class=" text-gray-700">01</p>
+                        </div>
+                    </div>
+                  <div>
+                    <h1 class="text-7xl font-bold text-white">Welcome to the <br> <span class="text-indigo-500">ReTro</span> Forum</h1>
+                    <p class="text-white text-2xl lg:my-12">Share your favorite opinion and <br>win ReTro forum coffee mug!</p>
+                    <label class="input input-bordered flex items-center gap-2">
+                        <input type="text" class="grow rounded-3xl" placeholder="Search here anything"/>
+                        <button class="btn btn-active btn-primary rounded-3xl px-10">Search</button>
+                    </label>
+                  </div>
+                </div>
+              </div>
+        </section>
+
+    </header>
+
+    <main class="mx-20">
+<!-- let's discuss section -->
+
+        <div class="text-center">
+            <h2 class="font-bold text-5xl mt-16">Let's discuss</h2>
+            <p class="text-xl my-10 mx-52"> Yes, you can run until tests and view the results directly within the app. The integrated testing features allow for a streamlined</p>
+        </div>
+<!-- card section         -->
+        <div class="flex">
+            <div id="card-container" class="mr-10">
+                
+            </div>
+            <div>
+                <div class="flex bg-purple-100 rounded-box p-10 mt-5">
+                    <h4 class="font-bold text-xl">Title</h4>
+                    <h6 class="ml-52">Mark as read</h6>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+
+    </footer>
+    <script src="./script/forum.js"></script>
+</body>
+</html>
