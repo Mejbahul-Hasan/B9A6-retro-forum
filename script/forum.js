@@ -33,7 +33,7 @@ const loadPosts = async() =>{
                                 <div class="mx-5">${item.posted_time} <span>min</span></div>
                             </div>
                             <div class="card-actions ml-56">
-                                <button onclick="newCard('${item.title}', '${item.view_count}' )" class="rounded-full"><img src="./images/icons8-post-48.png" alt=""></button>
+                                <button onclick="newCard('${item.description}', '${item.view_count}')" class="rounded-full"><img src="./images/icons8-post-48.png" alt=""></button>
                             </div>
                         </div>
                     </div>
@@ -54,10 +54,10 @@ const newCard = (find1, find2)=>{
     const newCard = document.getElementById('small-card');
     const smallCard = document.createElement('div');
     smallCard.innerHTML = `
-    <div class="flex bg-purple-100 rounded-box p-10">
+    <div class="flex bg-purple-100 rounded-box p-5">
                         <div>${find1}</div>
-                        <div class="flex px-10">
-                            <div class="mx-5"><img src="./images/icons8-view-24.png" alt=""></div>
+                        <div class="flex px-5">
+                            <div class="mx-3"><img src="./images/icons8-view-24.png" alt=""></div>
                             <div>${find2}</div>
                         </div>
                     </div>
@@ -65,19 +65,44 @@ const newCard = (find1, find2)=>{
     newCard.appendChild(smallCard);
 }
 
-
-
-
-// const handleSearch = ()=>{
-// }
-
-
- 
 loadPosts();
 
-// if(item.isActive === "true"){
-//     document.getElementById('indicator-color').classList.add('bg-green-500');
-// }
-// else{
-//     document.getElementById('indicator-color').classList.add('bg-red-500');
-// }
+const loadLatestPosts = async() =>{
+    const res = await fetch('https://openapi.programming-hero.com/api/retro-forum/latest-posts');
+    const dataLatest = await res.json();
+    const finalCard = document.getElementById('final-card');
+    dataLatest.forEach(latest =>{
+        const finalDiv = document.createElement('div');
+        finalDiv.innerHTML = `
+        <div class="card w-96 bg-purple-100 shadow-xl">
+            <figure class="px-10 pt-10">
+              <img src="${latest.cover_image}" alt="Shoes" class="rounded-xl" />
+            </figure>
+            <div class="flex my-5 mx-10">
+                <div>
+                    <img src="./images/icons8-date-24.png" alt="">
+                </div>
+                <div class="px-5">${latest.author.posted_date ? latest.author.posted_date : 'No publish date'}</div>
+            </div>
+            <div class="card-body -mt-8">
+              <h2 class="card-title">${latest.title}</h2>
+              <p>${latest.description}</p>
+              <div class="flex">
+                <div class="avatar">
+                    <div class="w-24 rounded-full">
+                      <img src="${latest.profile_image}" />
+                    </div>
+                </div>
+                <div class="p-5">
+                    <p class="font-bold">${latest.author.name}</p>
+                    <p>${latest.author.designation ? latest.author.designation : 'Unknown'}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        `;
+        finalCard.appendChild(finalDiv);
+    })
+}
+ 
+loadLatestPosts();
