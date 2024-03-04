@@ -54,10 +54,10 @@ const newCard = (find1, find2)=>{
     const newCard = document.getElementById('small-card');
     const smallCard = document.createElement('div');
     smallCard.innerHTML = `
-    <div class="flex bg-purple-100 rounded-box p-5">
+                    <div class="flex bg-purple-100 rounded-box p-5 w-4/5 ml-12">
                         <div>${find1}</div>
                         <div class="flex px-5">
-                            <div class="mx-3"><img src="./images/icons8-view-24.png" alt=""></div>
+                            <div class="mx-2"><img src="./images/icons8-view-24.png" alt=""></div>
                             <div>${find2}</div>
                         </div>
                     </div>
