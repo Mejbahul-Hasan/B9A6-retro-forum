@@ -123,7 +123,6 @@ const postByQuery = async(searchText) =>{
     })
 }
 
-
 const handleSearch = () =>{
     const searchField = document.getElementById('search-field');
     const searchText = searchField.value;
