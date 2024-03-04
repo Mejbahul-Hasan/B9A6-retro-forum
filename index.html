@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ReTro Forum</title>
+    <title>BrainStorming Forum</title>
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
@@ -55,8 +55,8 @@
                     <h1 class="text-7xl font-bold text-white">Welcome to the <br> <span class="text-indigo-500">BrainStorming</span> Forum</h1>
                     <p class="text-white text-2xl lg:my-12">Contribute your ideas and <br>become BrainStorming forum genius!</p>
                     <label class="input input-bordered flex items-center gap-2">
-                        <input type="text" class="grow rounded-3xl" placeholder="Search here anything"/>
-                        <button class="btn btn-active btn-primary rounded-3xl px-10">Search</button>
+                        <input id="search-field" type="text" class="grow rounded-3xl" placeholder="Search here anything"/>
+                        <button onclick="handleSearch()" class="btn btn-active btn-primary rounded-3xl px-10">Search</button>
                     </label>
                   </div>
                 </div>

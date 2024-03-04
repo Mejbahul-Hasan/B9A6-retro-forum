@@ -1,3 +1,5 @@
+// Left side card section
+
 const loadPosts = async() =>{
     const response = await fetch('https://openapi.programming-hero.com/api/retro-forum/posts');
     const data = await response.json();
@@ -43,6 +45,7 @@ const loadPosts = async() =>{
     })
 }
 
+// Right side card section
 
 let count = 1;
 
@@ -64,6 +67,8 @@ const newCard = (find1, find2)=>{
     `;
     newCard.appendChild(smallCard);
 }
+
+// Latest Post Section
 
 loadPosts();
 
@@ -106,3 +111,20 @@ const loadLatestPosts = async() =>{
 }
  
 loadLatestPosts();
+
+// Search result
+
+const postByQuery = async(searchText) =>{
+    const res = await fetch(`https://openapi.programming-hero.com/api/retro-forum/posts?category=${searchText}`);
+    const dataQuery = await res.json();
+    console.log(dataQuery);
+}
+
+
+const handleSearch = () =>{
+    const searchField = document.getElementById('search-field');
+    const searchText = searchField.value;
+    postByQuery(searchText);
+}  
+
+postByQuery();
